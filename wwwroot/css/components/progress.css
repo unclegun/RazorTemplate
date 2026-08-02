@@ -1,0 +1,13 @@
+.progress {
+  inline-size: 100%;
+  block-size: 0.75rem;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  background: var(--slate-100);
+}
+
+.progress > .progress__bar {
+  block-size: 100%;
+  background: var(--color-primary);
+  transition: inline-size var(--duration-slow) var(--ease-standard);
+}

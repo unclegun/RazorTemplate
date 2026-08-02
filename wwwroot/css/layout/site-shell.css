@@ -1,0 +1,18 @@
+.site-header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: var(--z-sticky);
+  background-color: var(--color-surface);
+  border-block-end: 1px solid var(--color-border);
+}
+
+.site-main-content {
+  min-block-size: 60vh;
+}
+
+.site-footer {
+  border-block-start: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  padding-block: var(--space-4);
+  margin-block-start: var(--space-8);
+}

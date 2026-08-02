@@ -1,0 +1,30 @@
+.dialog {
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 0;
+  inline-size: min(92vw, 36rem);
+  box-shadow: var(--shadow-lg);
+}
+
+.dialog::backdrop {
+  background: rgb(15 23 42 / 0.45);
+}
+
+.dialog__header,
+.dialog__body,
+.dialog__footer {
+  padding: var(--space-4);
+}
+
+.dialog__header,
+.dialog__footer {
+  border-block-end: 1px solid var(--color-border);
+}
+
+.dialog__footer {
+  border-block-end: 0;
+  border-block-start: 1px solid var(--color-border);
+}
+
+.dialog--sm { inline-size: min(92vw, 28rem); }
+.dialog--lg { inline-size: min(92vw, 56rem); }

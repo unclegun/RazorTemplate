@@ -1,0 +1,27 @@
+.tooltip-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.tooltip {
+  position: absolute;
+  inset-inline-start: 50%;
+  inset-block-end: calc(100% + 0.3rem);
+  transform: translateX(-50%);
+  background: var(--slate-900);
+  color: #fff;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  font-size: var(--font-size-xs);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-standard);
+}
+
+[data-tooltip]:hover + .tooltip,
+[data-tooltip]:focus-visible + .tooltip,
+.tooltip-wrap:focus-within .tooltip {
+  visibility: visible;
+  opacity: 1;
+}

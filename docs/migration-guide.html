@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Migration Guide - Design System</title>
+  <link rel="stylesheet" href="./assets/css/site.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="container container--wide">
+      <nav class="site-nav" aria-label="Documentation">
+        <a class="site-nav__brand" href="./index.html">RazorTemplate</a>
+        <button class="button button--secondary site-nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav-menu">Menu</button>
+        <ul id="site-nav-menu" class="site-nav__menu" data-nav-menu>
+          <li><a class="site-nav__link" href="./index.html">Overview</a></li>
+          <li><a class="site-nav__link" href="./components/alerts.html">Components</a></li>
+          <li><a class="site-nav__link" href="./migration-guide.html">Migration</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content" class="site-main-content">
+    <div class="container container--wide">
+      <section class="card">
+        <div class="card__body">
+          <h1>Migration guide</h1>
+          <p>The system keeps temporary compatibility aliases so older class names can be adopted incrementally.</p>
+          <table class="data-table">
+            <caption>Legacy to new class mapping</caption>
+            <thead><tr><th>Old class</th><th>New class</th></tr></thead>
+            <tbody>
+              <tr><td>button-config</td><td>button</td></tr>
+              <tr><td>button-primary</td><td>button--primary</td></tr>
+              <tr><td>button-secondary</td><td>button--secondary</td></tr>
+              <tr><td>button-go</td><td>button--success or button--primary</td></tr>
+              <tr><td>button-stop</td><td>button--danger</td></tr>
+              <tr><td>button-yield</td><td>button--warning</td></tr>
+              <tr><td>site-card</td><td>card</td></tr>
+              <tr><td>site-card-header</td><td>card__header</td></tr>
+              <tr><td>site-card-body</td><td>card__body</td></tr>
+              <tr><td>container-input</td><td>form-field</td></tr>
+              <tr><td>text-align-center</td><td>u-text-center</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">© 2026 RazorTemplate</div>
+  </footer>
+  <script type="module" src="./assets/js/site.js"></script>
+</body>
+</html>

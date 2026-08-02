@@ -1,0 +1,12 @@
+.spinner {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  border: 3px solid var(--slate-300);
+  border-inline-end-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

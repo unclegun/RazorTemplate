@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alerts - Design System</title>
+  <link rel="stylesheet" href="../assets/css/site.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="container container--wide">
+      <nav class="site-nav" aria-label="Documentation">
+        <a class="site-nav__brand" href="../index.html">RazorTemplate</a>
+        <button class="button button--secondary site-nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav-menu">Menu</button>
+        <ul id="site-nav-menu" class="site-nav__menu" data-nav-menu>
+          <li><a class="site-nav__link" href="../index.html">Overview</a></li>
+          <li><a class="site-nav__link" href="./alerts.html">Alerts</a></li>
+          <li><a class="site-nav__link" href="./buttons.html">Buttons</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content" class="site-main-content">
+    <div class="container container--wide">
+      <section class="stack stack--lg">
+        <header class="stack stack--sm">
+          <p class="page-intro">Components</p>
+          <h1>Alerts</h1>
+          <p class="lead">Use alerts for concise, high-importance updates that should be visible without interrupting the entire workflow.</p>
+        </header>
+        <section class="card" aria-labelledby="alert-example">
+          <div class="card__body">
+            <h2 id="alert-example">Example</h2>
+            <section class="alert alert--warning" data-ui-alert="true">
+              <div class="alert__body">
+                <h3 class="alert__title">Review required</h3>
+                <p>Confirm all fields before submission.</p>
+              </div>
+            </section>
+            <pre><code>&lt;section class="alert alert--warning"&gt;...&lt;/section&gt;</code></pre>
+          </div>
+        </section>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">© 2026 RazorTemplate</div>
+  </footer>
+  <script type="module" src="../assets/js/site.js"></script>
+</body>
+</html>

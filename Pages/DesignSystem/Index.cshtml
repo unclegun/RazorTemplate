@@ -1,0 +1,120 @@
+@page
+@model RazorTemplate.Pages.DesignSystem.IndexModel
+@{
+    ViewData["Title"] = "Design system";
+}
+
+<section class="stack stack--lg">
+    <header class="stack stack--sm">
+        <p class="page-intro">Razor Pages design system</p>
+        <h1>Scientific operations workspace</h1>
+        <p class="lead">A polished, accessible native UI for study tracking, review workflows, and data quality management.</p>
+    </header>
+
+    <ui-alert variant="Warning" title="Review required" dismissible="true">
+        Confirm all required fields before submitting the study packet.
+    </ui-alert>
+
+    <div class="cluster cluster--wrap">
+        <ui-badge variant="Success">Active</ui-badge>
+        <ui-badge variant="Info">Reviewed</ui-badge>
+        <ui-badge variant="Warning">Pending</ui-badge>
+        <ui-badge variant="Danger">Blocked</ui-badge>
+    </div>
+
+    <ui-card title="Study overview" variant="Primary" element="section">
+        <ui-card-body>
+            <div class="cluster cluster--wrap">
+                <ui-status variant="Success">Enrollment open</ui-status>
+                <ui-status variant="Info">16 participants</ui-status>
+                <ui-status variant="Warning">2 follow-ups due</ui-status>
+            </div>
+            <div class="grid grid--2" style="margin-top: 1rem;">
+                <ui-field asp-for="Input.StudyName" label="Study name" hint="Use a concise internal identifier." />
+                <ui-field asp-for="Input.ResearchLead" label="Research lead" hint="Primary contact for approvals." />
+            </div>
+        </ui-card-body>
+        <ui-card-footer>
+            <ui-button variant="Secondary" asp-page="/Index">Cancel</ui-button>
+            <ui-button variant="Primary" type="submit">Save changes</ui-button>
+        </ui-card-footer>
+    </ui-card>
+
+    <ui-card title="Review timeline" variant="Default" element="article">
+        <ui-card-body>
+            <ui-breadcrumb aria-label="Breadcrumb">
+                <ui-breadcrumb-item asp-page="/Index">Home</ui-breadcrumb-item>
+                <ui-breadcrumb-item asp-page="/DesignSystem/Index">Design system</ui-breadcrumb-item>
+                <ui-breadcrumb-item current="true">Timeline</ui-breadcrumb-item>
+            </ui-breadcrumb>
+
+            <div class="stack stack--md" style="margin-top: 1rem;">
+                <div class="cluster cluster--wrap">
+                    <ui-button variant="Primary" type="button" data-dialog-open="review-dialog">Open dialog</ui-button>
+                    <ui-button variant="Secondary" type="button">Print summary</ui-button>
+                    <ui-button variant="Ghost" type="button" aria-label="Helpful guidance">?</ui-button>
+                </div>
+                <ui-pagination model="Model.Pagination" asp-page="/DesignSystem/Index" aria-label="Study results pages" />
+                <ui-progress value="72" max="100" />
+            </div>
+        </ui-card-body>
+    </ui-card>
+
+    <ui-card title="Data table" variant="Default" element="div">
+        <ui-card-body>
+            <table class="data-table">
+                <caption>Protocol milestones</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Milestone</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Owner</th>
+                        <th scope="col">Due</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Site initiation</td>
+                        <td><ui-status variant="Success">Complete</ui-status></td>
+                        <td>J. Alvarez</td>
+                        <td>2026-07-21</td>
+                    </tr>
+                    <tr>
+                        <td>Document review</td>
+                        <td><ui-status variant="Warning">Pending</ui-status></td>
+                        <td>S. Clarke</td>
+                        <td>2026-08-05</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ui-card-body>
+    </ui-card>
+
+    <ui-card title="Workflow tabs" variant="Default" element="section">
+        <ui-card-body>
+            <ui-tabs label="Record sections">
+                <ui-tab title="Details" active="true">
+                    <p>Use this section to confirm protocol details.</p>
+                </ui-tab>
+                <ui-tab title="History">
+                    <p>Review the full audit trail for this study.</p>
+                </ui-tab>
+                <ui-tab title="Notes">
+                    <p>Capture internal follow-up notes for the site coordinator.</p>
+                </ui-tab>
+            </ui-tabs>
+        </ui-card-body>
+    </ui-card>
+
+    <ui-empty-state title="No studies found" message="Adjust your filters to view more records." icon="🔎">
+        <ui-button variant="Primary" asp-page="/DesignSystem/Index">Create study</ui-button>
+    </ui-empty-state>
+
+    <ui-dialog id="review-dialog" title="Delete study draft?" size="small">
+        <p>This action cannot be undone.</p>
+        <ui-card-footer>
+            <ui-button variant="Secondary" type="button" data-dialog-close>Cancel</ui-button>
+            <ui-button variant="Danger" type="submit">Delete</ui-button>
+        </ui-card-footer>
+    </ui-dialog>
+</section>

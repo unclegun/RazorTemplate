@@ -1,0 +1,12 @@
+.container {
+  inline-size: min(100% - 2rem, var(--content-width-md));
+  margin-inline: auto;
+}
+
+.container--wide {
+  inline-size: min(100% - 2rem, var(--content-width-lg));
+}
+
+.container--narrow {
+  inline-size: min(100% - 2rem, var(--content-width-sm));
+}

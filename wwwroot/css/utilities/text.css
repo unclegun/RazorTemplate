@@ -1,0 +1,10 @@
+.u-text-center { text-align: center !important; }
+.u-text-muted { color: var(--color-text-muted) !important; }
+
+.display-4 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+.text-danger {
+  color: var(--color-danger) !important;
+}

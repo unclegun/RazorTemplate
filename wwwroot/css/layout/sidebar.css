@@ -1,0 +1,11 @@
+.sidebar-layout {
+  display: grid;
+  grid-template-columns: 16rem 1fr;
+  gap: var(--space-6);
+}
+
+@media (max-width: 56rem) {
+  .sidebar-layout {
+    grid-template-columns: 1fr;
+  }
+}
